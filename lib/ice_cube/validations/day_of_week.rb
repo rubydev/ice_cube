@@ -51,7 +51,7 @@ module IceCube
       end
 
       def build_ical(builder)
-        ical_day = IcalBuilder.fixnum_to_ical_day(day)
+        ical_day = IcalBuilder.Integer_to_ical_day(day)
         # Delete any with this day and no occ first
         builder['BYDAY'].delete_if { |d| d == ical_day }
         builder['BYDAY'] << "#{occ}#{ical_day}"
